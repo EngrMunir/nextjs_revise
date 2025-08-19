@@ -1,10 +1,23 @@
-import { notFound, redirect } from "next/navigation"
-const ReviewDetails = async({params}:{params: Promise<{ productId:string ,reviewId: string}>}) => {
+import { notFound } from "next/navigation";
+
+function getRandomInt(count:number){
+    return Math.floor(Math.random()*count);
+
+}
+
+const ProductDetails = async({params
+
+}:{
+    params: Promise<{ productId:string ,reviewId: string}>
+}) => {
+    const random = getRandomInt(2);
+    if(random === 1){
+        throw new Error("Error loading review");
+    }
     const { productId, reviewId } = await params;
 
     if(parseInt(reviewId)> 1000){
-        // notFound();
-        redirect("/products");
+        notFound();
     }
     return (
         <div>
@@ -13,4 +26,4 @@ const ReviewDetails = async({params}:{params: Promise<{ productId:string ,review
     );
 };
 
-export default ReviewDetails;
+export default ProductDetails;

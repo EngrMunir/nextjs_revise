@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { use } from "react";
 
-
 export default function NewArticle({params, searchParams}:{
     params: Promise<{articleId: string}>;
     searchParams:Promise<{lang?:"en"|"es"|"fr"}>;
