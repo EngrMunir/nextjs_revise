@@ -1,6 +1,6 @@
 "use client";
 
-import "./globals.com";
+import "./globals.css";
 
 export default function GlobalError(){
     return (
